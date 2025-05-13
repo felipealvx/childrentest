@@ -1,0 +1,247 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "Você pratica algum exercício físico ou esporte regularmente (na escola ou fora dela)?",
+      "type": "single_choice",
+      "options": [
+        "sim",
+        "não"
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Quantos dias você pratica este exercício/esporte por semana?",
+      "type": "single_choice",
+      "options": [
+        "de 1 a 2 dias por semana",
+        "de 3 a 4 dias por semana",
+        "5 ou mais dias por semana",
+        "não sei responder, depende da semana"
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Você pratica este exercício físico ou esporte de maneira competitiva (participa de competições)?",
+      "type": "single_choice",
+      "options": [
+        "sim",
+        "não"
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Quantas horas por dia você permanece sentado assistindo televisão?",
+      "type": "single_choice",
+      "options": [
+        "de 0 a 1 hora por dia",
+        "de 2 a 3 horas por dia",
+        "de 4 a 5 horas por dia",
+        "de 6 a 7 horas por dia",
+        "8 horas ou mais por dia",
+        "não sei responder, depende do dia"
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Quantas horas por dia você permanece sentado utilizando o computador?",
+      "type": "single_choice",
+      "options": [
+        "de 0 a 1 hora por dia",
+        "de 2 a 3 horas por dia",
+        "de 4 a 5 horas por dia",
+        "6 horas ou mais por dia",
+        "não sei responder, depende do dia"
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Você costuma ler e/ou estudar na cama?",
+      "type": "single_choice",
+      "options": [
+        "sim",
+        "não",
+        "às vezes"
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Qual a sua posição preferida para dormir?",
+      "type": "single_choice",
+      "options": [
+        "de lado",
+        "de bruços (barriga para baixo)",
+        "de costas (barriga para cima)",
+        "não sei responder, depende do dia"
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Quantas horas você dorme por noite?",
+      "type": "single_choice",
+      "options": [
+        "de 0 a 6 horas por dia",
+        "7 horas por dia",
+        "de 8 a 9 horas por dia",
+        "10 horas ou mais por dia",
+        "não sei responder, depende do dia"
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Como você costuma sentar na escola para escrever à mesa?",
+      "type": "image_choice",
+      "options": [
+        "image_1",
+        "image_2",
+        "image_3",
+        "image_4",
+        "image_5",
+        "outro modo / não sei"
+      ]
+    },
+    {
+      "id": 10,
+      "text": "Como você costuma sentar em uma cadeira ou em um banco para conversar com os amigos?",
+      "type": "image_choice",
+      "options": [
+        "image_1",
+        "image_2",
+        "image_3",
+        "image_4",
+        "image_5",
+        "outro modo / não sei"
+      ]
+    },
+    {
+      "id": 11,
+      "text": "Como você costuma sentar para utilizar o computador?",
+      "type": "image_choice",
+      "options": [
+        "image_1",
+        "image_2",
+        "image_3",
+        "image_4",
+        "image_5",
+        "outro modo / não sei"
+      ]
+    },
+    {
+      "id": 12,
+      "text": "Como você costuma pegar objeto do chão?",
+      "type": "image_choice",
+      "options": [
+        "image_1",
+        "image_2",
+        "image_3",
+        "image_4",
+        "image_5",
+        "outro modo / não sei"
+      ]
+    },
+    {
+      "id": 13,
+      "text": "O que você utiliza para carregar o material escolar? Marque uma das opções abaixo.",
+      "type": "image_choice_with_label",
+      "options": [
+        { "value": "a", "label": "Mochila 2 alças" },
+        { "value": "b", "label": "Mochila 1 alça" },
+        { "value": "c", "label": "Mochila de rodas" },
+        { "value": "d", "label": "Bolsa" },
+        { "value": "e", "label": "Pasta" },
+        { "value": "f", "label": "Outro" }
+      ]
+    },
+    {
+      "id": 14,
+      "text": "Como você leva sua mochila escolar?",
+      "type": "image_choice",
+      "options": [
+        "image_1",
+        "image_2",
+        "image_3",
+        "image_4",
+        "image_5",
+        "outro modo / não sei"
+      ]
+    },
+    {
+      "id": 15,
+      "text": "Até que série sua mãe (ou sua responsável do sexo feminino) estudou?",
+      "type": "single_choice",
+      "options": [
+        "não frequentou a escola",
+        "nível fundamental (1ª a 8ª série)",
+        "nível médio (1º ao 3º ano)",
+        "nível superior (faculdade)",
+        "não sei",
+        "não tenho responsável do sexo feminino"
+      ]
+    },
+    {
+      "id": 16,
+      "text": "Até que série seu pai (ou seu responsável do sexo masculino) estudou?",
+      "type": "single_choice",
+      "options": [
+        "não frequentou a escola",
+        "nível fundamental (1ª a 8ª série)",
+        "nível médio (1º ao 3º ano)",
+        "nível superior (faculdade)",
+        "não sei",
+        "não tenho responsável do sexo masculino"
+      ]
+    },
+    {
+      "id": 17,
+      "text": "Algum de seus pais (ou responsáveis) apresenta dor nas costas?",
+      "type": "single_choice",
+      "options": [
+        "mãe",
+        "pai",
+        "outro",
+        "não sei responder"
+      ]
+    },
+    {
+      "id": 18,
+      "text": "Você sente ou já sentiu dor nas costas nos últimos 3 meses?",
+      "type": "single_choice",
+      "options": [
+        { "value": "sim", "next_question": 19 },
+        { "value": "não", "end_questionnaire": true },
+        "não sei responder"
+      ]
+    },
+    {
+      "id": 19,
+      "text": "Esta dor nas costas ocorre ou ocorreu com que frequência?",
+      "type": "single_choice",
+      "options": [
+        "foi apenas uma vez",
+        "uma vez por mês",
+        "uma vez por semana",
+        "de duas a três vezes por semana",
+        "quatro vezes ou mais por semana",
+        "não sei responder"
+      ]
+    },
+    {
+      "id": 20,
+      "text": "Esta dor nas costas impede ou impediu de realizar atividades como: brincar, estudar, praticar esportes...",
+      "type": "single_choice",
+      "options": [
+        "sim",
+        "não",
+        "não sei responder"
+      ]
+    },
+    {
+      "id": 21,
+      "text": "Na escala abaixo de 0 a 10, por favor, identifique a intensidade da dor nas costas nos últimos 3 meses.",
+      "type": "scale",
+      "scale_min": 0,
+      "scale_max": 10,
+      "description": "0 = nenhuma dor | 10 = dor insuportável"
+    }
+  ]
+}

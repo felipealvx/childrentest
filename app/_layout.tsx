@@ -1,29 +1,38 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+// Em /app/_layout.tsx
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+import React from 'react';
+import { useEffect } from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { useFonts } from 'expo-font';
+import { SplashScreen, Stack } from 'expo-router';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+// Impedir a tela de splash de esconder automaticamente
+SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+  const [fontsLoaded, fontError] = useFonts({
+    // Você pode adicionar fontes personalizadas aqui
   });
 
-  if (!loaded) {
-    // Async font loading only occurs in development.
+  useEffect(() => {
+    if (fontsLoaded || fontError) {
+      // Esconder a tela de splash depois que as fontes forem carregadas ou se houver erro
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded, fontError]);
+
+  if (!fontsLoaded && !fontError) {
     return null;
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
+    <SafeAreaProvider>
       <StatusBar style="auto" />
-    </ThemeProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="form" options={{ headerShown: false }} />
+      </Stack>
+    </SafeAreaProvider>
   );
 }

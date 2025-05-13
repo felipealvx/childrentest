@@ -1,75 +1,147 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+// Em /app/(tabs)/index.tsx
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, Image, SafeAreaView } from 'react-native';
+import { router } from 'expo-router';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.contentContainer}>
+        <View style={styles.headerContainer}>
+          <Text style={styles.appTitle}>ChildrenCheck</Text>
+          <Text style={styles.appDescription}>
+            Avaliação de saúde e hábitos para crianças e adolescentes
+          </Text>
+        </View>
+        
+        <View style={styles.cardContainer}>
+          <View style={styles.card}>
+            <Text style={styles.cardTitle}>Novo Formulário</Text>
+            <Text style={styles.cardDescription}>
+              Responda ao questionário para avaliar seus hábitos e postura
+            </Text>
+            
+            <TouchableOpacity
+              style={styles.startButton}
+              onPress={() => router.push('../form')}
+            >
+              <Text style={styles.startButtonText}>Iniciar Questionário</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        
+        <View style={styles.featuresContainer}>
+          <View style={styles.featureItem}>
+            <Text style={styles.featureTitle}>21 Perguntas</Text>
+            <Text style={styles.featureText}>
+              Questionário completo para avaliação de saúde e postura
+            </Text>
+          </View>
+          
+          <View style={styles.featureItem}>
+            <Text style={styles.featureTitle}>Avaliação Visual</Text>
+            <Text style={styles.featureText}>
+              Com imagens para facilitar a identificação de posturas
+            </Text>
+          </View>
+          
+          <View style={styles.featureItem}>
+            <Text style={styles.featureTitle}>Fácil de Responder</Text>
+            <Text style={styles.featureText}>
+              Interface simples com perguntas diretas e objetivas
+            </Text>
+          </View>
+        </View>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
+  container: {
+    flex: 1,
+    backgroundColor: '#f9f9f9',
+  },
+  contentContainer: {
+    flex: 1,
+    padding: 20,
+  },
+  headerContainer: {
     alignItems: 'center',
-    gap: 8,
+    marginBottom: 30,
+    marginTop: 20,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  appTitle: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#4a90e2',
+    marginBottom: 10,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  appDescription: {
+    fontSize: 16,
+    color: '#666',
+    textAlign: 'center',
+  },
+  cardContainer: {
+    alignItems: 'center',
+    marginBottom: 30,
+  },
+  card: {
+    backgroundColor: 'white',
+    borderRadius: 12,
+    padding: 24,
+    width: '100%',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+  cardTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: '#333',
+  },
+  cardDescription: {
+    fontSize: 15,
+    color: '#666',
+    marginBottom: 20,
+  },
+  startButton: {
+    backgroundColor: '#4a90e2',
+    paddingVertical: 14,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  startButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  featuresContainer: {
+    marginTop: 20,
+  },
+  featureItem: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 16,
+    marginBottom: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 3,
+    elevation: 1,
+  },
+  featureTitle: {
+    fontSize: 16,
+    fontWeight: '600',
+    marginBottom: 5,
+    color: '#4a90e2',
+  },
+  featureText: {
+    fontSize: 14,
+    color: '#777',
   },
 });
